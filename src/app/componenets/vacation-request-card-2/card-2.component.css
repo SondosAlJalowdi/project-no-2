@@ -1,0 +1,85 @@
+
+.btn {
+  border-radius: 8px;
+  width: 150px
+}
+.rounded-edges{
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rounded-edges-small{
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-button{
+  width: 125px;
+  height: 30px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 6px;
+  height: 6px;
+  background-color: black;
+}
+.no-shadow {
+  box-shadow: unset;
+}
+input:focus {
+  outline: none;
+}
+
+.card-body p {
+  white-space: nowrap;
+}
+
+.card-body h1 {
+  white-space: nowrap;
+}
+
+.text-sm-center {
+  text-align: center !important;
+  @media (min-width: 992px) {
+    text-align: left !important;
+  }
+}
+
+.hide-lg-show-sm {
+  display: flex;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.show-lg-hide-sm {
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+
+.custom-caption {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  width: 100%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: -1;
+}

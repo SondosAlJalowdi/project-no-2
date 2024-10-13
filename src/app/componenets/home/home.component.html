@@ -1,0 +1,56 @@
+<section class="p-5">
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-10">
+        <h4>Welcome Back John Doe! Here are your latest updates.</h4>
+      </div>
+      <div class="col">
+        <button class="btn btn-success btn-sm">New Request</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <app-home-employee-details class="col-lg-6 col-sm-12"></app-home-employee-details>
+      <div class="col-lg-6 col-sm-12">
+          <app-request-count class="row" [vacationCount]="15" [leaveCount]="15"></app-request-count>
+      </div>
+    </div>
+  </div>
+</section>
+<app-image-slider></app-image-slider>
+<section>
+  <div class="container pt-3 mt-3">
+    <div class="card bg-light m-3 rounded-edges">
+      <div class="card-body">
+        <div class="row justify-content-between pb-2 border-bottom">
+          <div class="col-lg-3 col-md-5 col-sm-12">
+            <fa-icon [icon]="faListCheck" class="ms-2 fa-2xl float-start" style="color:#198754;"></fa-icon>
+            <h5 class="pt-1 ms-5">Vacation Requests</h5>
+          </div>
+          <div class="col-lg-9 col-md-7 col-sm-12">
+            <div class="border border-b1 ps-2 pt-1 bg-white col-lg-3 col-sm-12 float-lg-end rounded-edges no-shadow">
+              <fa-icon [icon]="faMagnifyingGlass" class="search-icon fa-solid fa-magnifying-glass" style="color:#198754;"></fa-icon>
+              <input id="search-input" class="border border-white" type="search" placeholder="Search..." [(ngModel)]="searchText">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <app-card *ngFor="let card of cards"
+                    [name]="card.name"
+                    [imgSrc]="card.imgSrc"
+                    [salary]="card.salary"
+                    [duration]="card.duration"
+                    [submittedOn]="card.submittedOn"
+                    [searchText]="searchText">
+          </app-card>
+        </div>
+        <div class="text-end fw-bold">
+          <a class="link-success text-decoration-none" routerLink="/vacation-requests">View More ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

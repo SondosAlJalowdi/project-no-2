@@ -1,0 +1,31 @@
+<div class="mb-4 col-lg-3 col-md-6 col-sm-12">
+  <div class="card" style="width: 26rem;">
+    <div class="card-body">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-sm-11 text-center">
+          <img class="rounded-circle" height="70" src="{{imgSrc}}" width="70">
+        </div>
+        <div class="col-lg-8 col-sm-11 text-sm-center mt-2">
+          <h5 class="card-title" [innerHTML]="name"></h5>
+        </div>
+        <div class="col-lg-1 col-sm-1 checkbox rows float-end" *ngIf="showCheckboxes">
+          <input type="checkbox" [checked]="isSelected" (change)="onSelectionChange($event)"/>
+        </div>
+      </div>
+      <div class="card-text">
+        <p class="my-1"><span class="text-muted">Submitted on:</span><br>{{submittedOn}}</p>
+        <p class="my-1"><span class="text-muted">Duration:</span><br><span [innerHTML]="duration"></span>
+          <span class="float-end show-lg-hide-sm">
+            <button class="d-block btn btn-success col-lg-6 col-sm-12 m-1 card-button pt-0" href="#">Approve</button>
+            <button class="d-block btn btn-outline-success col-lg-6 col-sm-12 m-1 card-button pt-0" href="#">Decline</button>
+          </span>
+        </p>
+        <p class="my-1"><span class="text-muted mb-0">Salary:</span><br><span [innerHTML]="salary"></span></p>
+      </div>
+      <div class="row justify-content-center hide-lg-show-sm">
+        <button class="btn btn-success col-lg-6 col-sm-12 m-1 card-button pt-0" href="#">Approve</button>
+        <button class="btn btn-outline-success col-lg-6 col-sm-12 m-1 card-button pt-0" href="#">Decline</button>
+      </div>
+    </div>
+  </div>
+</div>

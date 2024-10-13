@@ -1,0 +1,11 @@
+<ng-container *ngFor="let request of requestTypes">
+  <div class="col-lg-6 col-sm-12">
+    <div class="card m-3 bg-success text-dark rounded-edges">
+      <div class="card-body">
+        <fa-icon [icon]="faListCheck" class="fa-4x float-start" style="color: white;"></fa-icon>
+        <h1 class="card-title text-white ms-5 mt-3 mb-0 ps-5 display-2">{{ request.count }}</h1>
+        <p class="card-text text-white mb-3">{{ request.label }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,30 @@
+<div class="col-lg-3 col-md-6 col-sm-12">
+    <div class="card m-2" style="width: 18rem;">
+      <div class="card-body">
+        <img class="rounded-circle d-block mx-auto" height="70" src="{{imgSrc}}" width="70" alt="User Image">
+        
+        <h5 class="card-title text-center" [innerHTML]="name | highlight: searchText"></h5>
+        
+        <div class="card-text">
+          <p>
+            <span class="text-muted">Submitted on:</span><br>
+            <span [innerHTML]="submittedOn | highlight: searchText"></span>
+          </p>
+          <p>
+            <span class="text-muted">Duration:</span><br>
+            <span [innerHTML]="duration | highlight: searchText"></span>
+          </p>
+          <p>
+            <span class="text-muted">Salary:</span><br>
+            <span [innerHTML]="salary | highlight: searchText"></span>
+          </p>
+        </div>
+  
+        <div class="d-flex flex-lg-row flex-column align-items-center">
+          <a class="btn btn-outline-success col-lg-6 col-sm-12 card-button pt-0 text-center" (click)="showAlert(false)">Decline</a>
+          <a class="btn btn-success col-lg-6 col-sm-12 m-1 card-button pt-0 text-center" (click)="showAlert(true)">Approve</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

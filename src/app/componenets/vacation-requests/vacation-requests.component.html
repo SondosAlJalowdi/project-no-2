@@ -1,0 +1,49 @@
+<section class="p-5 pb-0">
+  <div class="container mt-5">
+    <div class="text-dark mb-3 w-5">
+      <div class="row justify-content-between border-bottom pb-3">
+        <div class="col-lg-3 col-md-5 col-sm-12">
+          <fa-icon [icon]="faListCheck" class="ms-2 fa-2xl float-start" style="color:#198754;"></fa-icon>
+          <h5 class="mt-1 ms-5">Vacation Requests</h5>
+        </div>
+        <div class="col-lg-9 col-md-7 col-sm-12">
+          <div class="border border-b1 ps-2 pt-1 bg-white col-lg-3 col-sm-12 float-lg-end rounded-edges no-shadow">
+            <fa-icon [icon]="faSearch" class="pb-1" style="color:#198754;"></fa-icon>
+            <input type="text" class="border-0" placeholder="Search..." [(ngModel)]="searchText">
+          </div>
+        </div>
+      </div>
+
+      <div class="checkbox select-all m-4">
+        <input id="all" type="checkbox" [checked]="allSelected" (change)="onSelectAllChange($event)"/>
+        <label class="ms-2" for="all">Select all</label>
+        <fa-icon [icon]="faFilter" class="float-end"></fa-icon>
+      </div>
+
+      <ng-container *ngFor="let card of paginatedCards; let i = index">
+        <div *ngIf="i % 3 === 0" class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let innerCard of paginatedCards.slice(i, i + 3); let j = index">
+            <app-card-2
+              [name]="innerCard.name | highlight:searchText"
+              [imgSrc]="innerCard.imgSrc"
+              [salary]="innerCard.salary | highlight:searchText"
+              [duration]="innerCard.duration | highlight:searchText"
+              [submittedOn]="innerCard.submittedOn"
+              [searchText]="searchText"
+              [isSelected]="innerCard.isSelected"
+              [showCheckboxes]="showCheckboxes"
+              (selectionChange)="onCardSelectionChange(i + j, $event)">
+            </app-card-2>
+          </div>
+        </div>
+      </ng-container>
+
+      <app-pager
+        [totalItems]="cards.length"
+        [itemsPerPage]="itemsPerPage"
+        [currentPage]="currentPage"
+        (pageChange)="onPageChange($event)">
+      </app-pager>
+    </div>
+  </div>
+</section>

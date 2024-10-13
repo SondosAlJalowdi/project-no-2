@@ -1,0 +1,23 @@
+<section>
+  <div class="container pt-3 mt-3">
+    <div class="card bg-light m-3 rounded-edges">
+      <div class="card-body">
+        <div class="border-bottom">
+          <fa-icon [icon]="faHistory" class="ms-3 mt-1 fa-xl float-start" style="color:#198754;"></fa-icon>
+          <h5 class="pt-1 ms-5">History</h5>
+        </div>
+        <div class="row">
+          <div *ngFor="let item of vacationHistory" class="card m-3 pe-0 rounded-edges-small col-lg-3 col-md-6 col-sm-12" style="width: 17rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p class="card-text text-muted">{{ item.duration }} </p>
+              <p class="fw-bold">{{ item.days }}</p>
+              <p>Approved by: {{ item.approvedBy }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-end fw-bold"><a class="link-success text-decoration-none" href="#">View More</a></div>
+      </div>
+    </div>
+  </div>
+</section>
